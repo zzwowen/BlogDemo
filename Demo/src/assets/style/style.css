@@ -1,0 +1,19 @@
+body{
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  height: 100%;
+  color:#282828;
+
+}
+li{
+  list-style: none;
+}
+ul{
+  margin: 0;
+}
+pre{
+  padding: 10px;
+  background-color: #e6f1fe;
+}

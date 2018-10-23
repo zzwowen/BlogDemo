@@ -1,0 +1,26 @@
+{
+  "settings":{
+    "theme":{
+      "default":"#FFD100",
+      "options":[
+        {
+          "label":"",
+          "value":"#FFD100"
+        }
+      ]
+    },
+    "language":{
+      "default":"cn",
+      "options":[
+        {
+          "label":"中文",
+          "value":"cn"
+        },
+        {
+          "label":"英文",
+          "value":"en"
+        }
+      ]
+    }
+  }
+}
