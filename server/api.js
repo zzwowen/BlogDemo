@@ -101,20 +101,100 @@ module.exports = function(app) {
                     })
                     return
                 } else {
-
+                    let newArray=[];
+                    doc=doc.forEach((item)=>{
+                       let newObj={
+                           coverimg:item.coverimg,
+                           title:item.title,
+                           createtime:item.createtime,
+                           author:item.author,
+                           _id:item._id
+                       };
+                        newArray.push(newObj);
+                    });
                     res.json({
                         code: 200,
                         msg: '',
-                        data: doc
+                        data: newArray
                     })
                     return
                 }
 
             }
         })
-    })
+    });
+    //通过文章的id获取当前文章的详情
+    app.get('/api/article/getArticleDetials',function (req,res) {
 
+        if(req.query){
+            let obj= req.query;
+            db.articleModel.find(obj, function(err, doc) {
+                if (err) {
 
+                            res.json({
+                                code: 700,
+                                msg: '查询出错：' + err,
+                                data:[]
+                            })
+                            return
+                        } else {
+                            let q=doc;
+                            if (!doc) {
+                                res.json({
+                                    code: 600,
+                                    msg: '无数据',
+                                    data: doc
+                                })
+                                return
+                            } else {
+
+                                res.json({
+                                    code: 200,
+                                    msg: '',
+                                    data: doc
+                                })
+                                return
+                            }
+
+                        }
+            })
+        }else{
+            res.json({
+                code: 600,
+                msg: '无id',
+                data:[]
+            })
+        }
+        return
+        // db.articleModel.find({}, function(err, doc) {
+        //     if (err) {
+        //         console.log('查询出错：' + err);
+        //         res.json({
+        //             code: 700,
+        //             msg: '查询出错：' + err
+        //         })
+        //         return
+        //     } else {
+        //         if (!doc) {
+        //             res.json({
+        //                 code: 600,
+        //                 msg: '无数据',
+        //                 data: doc
+        //             })
+        //             return
+        //         } else {
+        //
+        //             res.json({
+        //                 code: 200,
+        //                 msg: '',
+        //                 data: doc
+        //             })
+        //             return
+        //         }
+        //
+        //     }
+        // })
+    });
   app.get('/api/img/getImgList',function (req,res) {
       db.imgsModel.find({}, function(err, doc) {
           if (err) {

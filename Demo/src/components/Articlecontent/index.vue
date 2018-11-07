@@ -1,6 +1,6 @@
 <template>
     <div class="articlecontent" v-html="content">
-111
+
     </div>
 </template>
 
@@ -18,6 +18,7 @@
 
 <style scoped>
 .articlecontent{
-
+  width: 100%;
+  position: relative;
 }
 </style>

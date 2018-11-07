@@ -29,7 +29,8 @@ import {
     Switch,
     Tag,
     ColorPicker,
-    Upload
+    Upload,
+  Scrollbar
 
 } from 'element-ui'
 
@@ -68,6 +69,7 @@ export default function elementui() {
     Vue.use(Tag);
     Vue.use(ColorPicker);
     Vue.use(Upload);
+    Vue.use(Scrollbar);
     // Vue.use(MessageBox);
     // Vue.use(Message);
     // Vue.use(Notification);

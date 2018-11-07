@@ -18,6 +18,7 @@ export default {
       .then((response) => {
         console.log(response);
         this.list = response.data.data || [];
+
       })
       .catch(function (error) {
         console.log(error);
@@ -41,8 +42,8 @@ export default {
     },
     turnToCurArticle(item){
       if(item){
-        this.$router.push({ path: '/details',query:item});
-        debugger
+
+        this.$router.push({ path: '/details',query:{id:item._id}});
       }
 
     },
@@ -60,7 +61,7 @@ export default {
         data: oMyForm
 
       }).then((res) => {
-        debugger
+
         console.log(res.data);
       })
       // this.axios.post('http://localhost:8889/api/upload',headers:{

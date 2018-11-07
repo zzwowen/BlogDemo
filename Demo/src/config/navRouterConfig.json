@@ -1,0 +1,16 @@
+[{
+  "path": "/home",
+  "name": "首页",
+  "component": "Main"
+
+},{
+  "path": "/setting",
+  "name": "个人设置",
+  "component": "Setting"
+
+},{
+  "path": "/edit",
+  "name": "编辑",
+  "component": "Setting"
+
+}]

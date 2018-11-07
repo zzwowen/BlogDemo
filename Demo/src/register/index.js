@@ -10,6 +10,11 @@ GlobePlugin.install = function (Vue, options) {
        }).catch((err) => {
            Vue.prototype['$$appConfig'] = {};
        });
+       import("../config/navRouterConfig.json").then((cfg) => {
+         Vue.prototype['$$navRouterConfig'] = cfg;
+       }).catch((err) => {
+         Vue.prototype['$$navRouterConfig'] = {};
+       });
    }
    else {
        let url = 'static/config/appConfig.json?' + new Date().getTime();
@@ -31,6 +36,25 @@ GlobePlugin.install = function (Vue, options) {
 
            }
        });
+     let url1 = 'static/config/navRouterConfig.json?' + new Date().getTime();
+
+     lib_$.ajax({
+       url: url1,
+       type: 'get', //GET
+       async: false, //或false,是否异步
+       data: {},
+       timeout: 5000, //超时时间
+       dataType: 'json', //返回的数据格式：
+       success: function (cfg, textStatus, jqXHR) {
+         Vue.prototype['$$navRouterConfig'] = cfg;
+       },
+       error: function (xhr, textStatus) {
+         Vue.prototype['$$navRouterConfig'] = {};
+       },
+       complete: function (data) {
+
+       }
+     });
    }
 
 }

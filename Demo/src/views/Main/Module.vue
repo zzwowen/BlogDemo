@@ -46,7 +46,11 @@
           <div class="list-item_img">
             <img :src="item.coverimg"/>
           </div>
-          {{item.title}}
+          <div class="list-item_title">
+           <span style="float: left;">{{item.title}}</span>
+            <span style="float: right;font-size: 12px;color:#a6a9ad;">By {{item.author}}</span>
+          </div>
+
           <div>
 
           </div>
@@ -276,6 +280,7 @@
     height: 340px;
     margin-left: 35px;
     box-shadow: 0px 0px 10px #ddd;
+    border:1px solid #d9edf7;
     margin-top: 5px;
   }
   .list-item:first-child{
@@ -287,11 +292,24 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    border-bottom: 1px solid #d9edf7;
+    box-sizing: border-box;
   }
   .list-item_img img{
     /*width: 100%;*/
     height: 100%;
     transition: all .3s;
+  }
+  .list-item_title{
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: bold;
   }
   .list-item_img img:hover{
     height: 103%;

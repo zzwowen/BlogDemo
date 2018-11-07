@@ -1,5 +1,9 @@
 <template lang="html">
   <div class="content">
+  <el-scrollbar wrapClass="content" viewClass="view-wrap">
+
+
+      <div class="view-wrap">
     <div class="title" :style="{'border-color':$store.state.layout.headerColor}">
       编辑
     </div>
@@ -43,6 +47,10 @@
 
 
     </div>
+
+
+  </div>
+    </el-scrollbar>
   </div>
 </template>
 
@@ -62,6 +70,8 @@
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0px 5px 10px #ddd;
+    overflow: auto;
+    position: absolute;
   }
 
   .title {

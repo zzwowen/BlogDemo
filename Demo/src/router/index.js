@@ -5,7 +5,8 @@ import VueAxios from 'vue-axios';
 Vue.use(VueAxios, axios);
 import {
   Content,
-  Home
+  Home,
+  NavContent
 } from 'layout/'
 Vue.use(Router)
 
@@ -34,7 +35,7 @@ export default new Router({
        },
        {
          path: '/setting',
-         component: Home,
+         component: NavContent,
          redirect: '/setting/',
          children:[
            {
@@ -46,7 +47,7 @@ export default new Router({
       },
     {
       path: '/edit',
-      component: Home,
+      component: NavContent,
       redirect: '/edit/',
       children:[
         {
@@ -58,7 +59,7 @@ export default new Router({
     },
     {
       path: '/details',
-      component: Home,
+      component: NavContent,
       redirect: '/details/',
       children:[
         {
