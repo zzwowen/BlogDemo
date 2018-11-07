@@ -1,6 +1,7 @@
-# demo
+# my first blog demmo
 
-> A Vue.js project
+>demo A Vue.js project
+>server A node server
 
 ## Build Setup
 
